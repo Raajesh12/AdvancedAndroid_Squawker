@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        if(getIntent().getExtras() != null && getIntent().getExtras().containsKey("test")) {
+            Log.d("MainActivityIntent", getIntent().getExtras().getString("test"));
+        }
     }
 
     @Override
