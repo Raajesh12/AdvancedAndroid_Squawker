@@ -35,6 +35,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -89,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements
         if(getIntent().getExtras() != null && getIntent().getExtras().containsKey("test")) {
             Log.d("MainActivityIntent", getIntent().getExtras().getString("test"));
         }
+
+        Log.d(LOG_TAG, FirebaseInstanceId.getInstance().getToken());
     }
 
     @Override
